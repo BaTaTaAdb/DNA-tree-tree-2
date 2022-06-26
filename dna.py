@@ -19,6 +19,8 @@ def check_args():
         print("Usage: python3 dna.py <data.csv> <sequence.txt>")
         exit()
 
+# provavelmente errado
+
 
 def dna_repeating_element(dna, element):
     if element in dna:
@@ -26,6 +28,7 @@ def dna_repeating_element(dna, element):
         consecutive_max = 0
         consecutive = 1
         # print(dna_split)
+        # print("\n\n\n")
         for i in range(len(dna_split)-1):
             if dna_split[i] == dna_split[i+1] == "" or dna_split[i+1] == "":
                 consecutive += 1
@@ -69,6 +72,7 @@ for element in dna_elements_list:
     #print(f"{element}: {repeated}")
 # print(person_dna)
 
+# tambem pode estar errado
 for i in database_list[1::]:
     # print(i[1::])
     test_list = [int(j) for j in i[1::]]
