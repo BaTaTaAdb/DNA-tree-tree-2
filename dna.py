@@ -11,10 +11,9 @@ args = sys.argv
 def check_args():
     try:
         with open(args[1], newline='') as database:
-            reader = csv.reader(database)
-            database_list = list(reader)
+            pass
         with open(args[2], "r") as texto:
-            dna = texto.readline()
+            pass
     except:
         print("ERROR: Invalid arguments values.\nUsage: python3 dna.py <data.csv> <sequence.txt>")
         exit()
