@@ -11,7 +11,7 @@ def dna_repeating_element(dna,element):
 	if element in dna:
 		dna_split = dna.split(element)
 		consecutive_max = 0
-		consecutive = 0
+		consecutive = 1
 		#print(dna_split)
 		for i in range(len(dna_split)-1):
 			if dna_split[i] == dna_split[i+1] == "" or dna_split[i+1] == "":
@@ -44,9 +44,23 @@ with open(args[2],"r") as texto:
 	dna = texto.readline()
 
 dna_elements_list = database_list[0][1::]
-for i in dna_elements_list:
-	pass
+person_dna = []
+for element in dna_elements_list:
+	repeated = dna_repeating_element(dna,element)
+	person_dna.append(repeated)
+	#print(f"{element}: {repeated}")
+# print(person_dna)
+
+for i in database_list[1::]:
+	# print(i[1::])
+	test_list = [int(j) for j in i[1::]]
+	# print(test_list)
+	if test_list == person_dna:
+		print(i[0])
+		exit()
+print(person_dna)
+print("No match")
 
 
-
+#for dna in
 #print(dna_repeating_element(dna,"AGATC"))
