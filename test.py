@@ -7,7 +7,8 @@ import sys
 show_args = False
 if len(sys.argv) == 1:
     show_args = input("Show args? ").lower() in ("y", "yes", "t", "true", "1")
-show_args_2 = sys.argv[1] != "noargs"
+else:
+    show_args_2 = sys.argv[1] != "noargs"
 
 
 def atoi(text):
