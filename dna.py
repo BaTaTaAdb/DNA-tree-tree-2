@@ -8,6 +8,18 @@ import sys
 args = sys.argv
 
 
+def check_args():
+    try:
+        with open(args[1], newline='') as database:
+            reader = csv.reader(database)
+            database_list = list(reader)
+        with open(args[2], "r") as texto:
+            dna = texto.readline()
+    except:
+        print("ERROR: Invalid arguments values.\nUsage: python3 dna.py <data.csv> <sequence.txt>")
+        exit()
+
+
 def dna_repeating_element(dna, element):
     if element in dna:
         dna_split = dna.split(element)
@@ -31,13 +43,15 @@ databases = [f for f in listdir("./databases/")
 sequences = [f for f in listdir("./sequences/")
              if isfile(join("./sequences/", f))]
 #print(databases, sequences)
-if len(args) < 2:
+"""if len(args) < 2:
     print("ERROR: Invalid arguments count.\nUsage: python3 dna.py <data.csv> <sequence.txt>")
     exit()
-"""if not (args[1] in databases and args[2] in sequences):
-	print("ERROR: Invalid arguments values.\nUsage: python3 dna.py <data.csv> <sequence.txt>")
-	exit()"""
 
+if check_args():
+    print("ERROR: Invalid arguments values.\nUsage: python3 dna.py <data.csv> <sequence.txt>")
+    exit()"""
+
+check_args()
 # get database
 with open(args[1], newline='') as database:
     reader = csv.reader(database)
