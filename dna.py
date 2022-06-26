@@ -15,7 +15,8 @@ def check_args():
         with open(args[2], "r") as texto:
             pass
     except:
-        print("ERROR: Invalid arguments values.\nUsage: python3 dna.py <data.csv> <sequence.txt>")
+        #print("ERROR: Invalid arguments values.\n")
+        print("Usage: python3 dna.py <data.csv> <sequence.txt>")
         exit()
 
 
